@@ -6,10 +6,10 @@ module.exports = {
 	execute(client) {
 		console.log(`Ready! Logged in as ${client.user.tag}`);
 		
-		// Function to update the bot’s presence text
+		// Function to update the bot’s presence text to match member count
 		function updatePresence() {
 			const totalMembers = client.guilds.cache.reduce((a, g) => a + g.memberCount, 0);
-			client.user.setActivity(`${totalMembers} members`, { type: ActivityType.Watching });
+			client.user.setActivity(`Rocking out with ${totalMembers} members`, { type: ActivityType.Custom });
 		}
 		
 		// Set initial presence
